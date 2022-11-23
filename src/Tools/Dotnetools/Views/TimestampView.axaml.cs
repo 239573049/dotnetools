@@ -2,9 +2,9 @@ using Avalonia.Controls;
 
 namespace Dotnetools.Views;
 
-public partial class MainWindow : Window
+public partial class TimestampView : UserControl
 {
-    public MainWindow()
+    public TimestampView()
     {
         InitializeComponent();
     }

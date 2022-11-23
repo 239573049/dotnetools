@@ -2,9 +2,9 @@ using Avalonia.Controls;
 
 namespace Dotnetools.Views;
 
-public partial class MainWindow : Window
+public partial class IconConvertView : UserControl
 {
-    public MainWindow()
+    public IconConvertView()
     {
         InitializeComponent();
     }
