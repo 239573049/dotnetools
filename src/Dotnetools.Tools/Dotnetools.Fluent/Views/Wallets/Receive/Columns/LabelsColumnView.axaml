@@ -1,0 +1,29 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:c="using:Dotnetools.Fluent.Controls"
+             xmlns:receive="clr-namespace:Dotnetools.Fluent.ViewModels.Wallets.Receive"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="receive:AddressViewModel"
+             x:CompileBindings="True"
+             x:Class="Dotnetools.Fluent.Views.Wallets.Receive.Columns.LabelsColumnView">
+  <DockPanel LastChildFill="True" Margin="10 0 30 0">
+    <c:PrivacyContentControl PrivacyReplacementMode="Text" NumberOfPrivacyChars="15"
+                             VerticalAlignment="Center">
+      <DockPanel LastChildFill="False">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Margin="0 0 0 0" Spacing="5" Orientation="Horizontal"
+                    DockPanel.Dock="Right">
+          <Button Classes="plain addressActionButton" ToolTip.Tip="Edit"
+                  Command="{Binding EditLabelCommand}">
+            <PathIcon Data="{StaticResource edit_regular}" Classes="addressActionIcon" />
+          </Button>
+        </StackPanel>
+        <c:LabelsItemsPresenter Items="{Binding Label}"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center" />
+      </DockPanel>
+    </c:PrivacyContentControl>
+  </DockPanel>
+</UserControl>

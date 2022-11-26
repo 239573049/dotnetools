@@ -1,0 +1,78 @@
+using System.Reactive.Linq;
+using System.Windows.Input;
+using Avalonia.Controls;
+using ReactiveUI;
+using Dotnetools.Fluent.Helpers;
+using Dotnetools.Fluent.Providers;
+using Dotnetools.Fluent.ViewModels.Dialogs;
+using Dotnetools.Fluent.ViewModels.HelpAndSupport;
+using Dotnetools.WabiSabi.Client;
+
+namespace Dotnetools.Fluent.ViewModels;
+
+public partial class ApplicationViewModel : ViewModelBase, ICanShutdownProvider
+{
+	private readonly IMainWindowService _mainWindowService;
+	[AutoNotify] private bool _isMainWindowShown = true;
+
+	public ApplicationViewModel(IMainWindowService mainWindowService)
+	{
+		_mainWindowService = mainWindowService;
+
+		QuitCommand = ReactiveCommand.Create(() => Shutdown(false));
+
+		ShowHideCommand = ReactiveCommand.Create(() =>
+		{
+			if (IsMainWindowShown)
+			{
+				_mainWindowService.Hide();
+			}
+			else
+			{
+				_mainWindowService.Show();
+			}
+		});
+
+		ShowCommand = ReactiveCommand.Create(() => _mainWindowService.Show());
+
+		AboutCommand = ReactiveCommand.Create(
+			() => MainViewModel.Instance.DialogScreen.To(new AboutViewModel(navigateBack: MainViewModel.Instance.DialogScreen.CurrentPage is not null)),
+			canExecute: MainViewModel.Instance.DialogScreen.WhenAnyValue(x => x.CurrentPage).Select(x => x is null));
+
+		using var bitmap = AssetHelpers.GetBitmapAsset("avares://Dotnetools.Fluent/Assets/WasabiLogo.ico");
+		TrayIcon = new WindowIcon(bitmap);
+	}
+
+	public WindowIcon TrayIcon { get; }
+	public ICommand AboutCommand { get; }
+	public ICommand ShowCommand { get; }
+
+	public ICommand ShowHideCommand { get; }
+
+	public ICommand QuitCommand { get; }
+
+	public void Shutdown(bool restart) => _mainWindowService.Shutdown(restart);
+
+	public void OnShutdownPrevented(bool restartRequest)
+	{
+		MainViewModel.Instance.ApplyUiConfigWindowSate(); // Will pop the window if it was minimized.
+		MainViewModel.Instance.CompactDialogScreen.To(new ShuttingDownViewModel(this, restartRequest));
+	}
+
+	public bool CanShutdown()
+	{
+		var cjManager = Services.HostedServices.GetOrDefault<CoinJoinManager>();
+
+		if (cjManager is { })
+		{
+			return cjManager.HighestCoinJoinClientState switch
+			{
+				CoinJoinClientState.InCriticalPhase => false,
+				CoinJoinClientState.Idle or CoinJoinClientState.InProgress => true,
+				_ => throw new ArgumentOutOfRangeException(),
+			};
+		}
+
+		return true;
+	}
+}

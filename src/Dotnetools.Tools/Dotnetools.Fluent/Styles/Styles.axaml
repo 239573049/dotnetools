@@ -1,0 +1,38 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:sys="using:System"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Styles.Resources>
+    <sys:Double x:Key="IconElementThemeHeight">16</sys:Double>
+    <Easing x:Key="FluentEasing">0.4,0,0.6,1</Easing>
+    <KeySpline x:Key="FluentKeySpline">0.4,0,0.6,1</KeySpline>
+    <FontFamily x:Key="MonospacedFont">avares://Dotnetools.Fluent/Assets/Fonts#Roboto Mono</FontFamily>
+    <FontFamily x:Key="WasabiLogoTextFont">avares://Dotnetools.Fluent/Assets/Fonts#Objectivity</FontFamily>
+    <sys:Int32 x:Key="MaxLabelLength">50</sys:Int32>
+  </Styles.Resources>
+
+  <StyleInclude Source="avares://Dotnetools.Fluent/Styles/Button.axaml" />
+  <StyleInclude Source="avares://Dotnetools.Fluent/Styles/Checkmark.axaml" />
+  <StyleInclude Source="avares://Dotnetools.Fluent/Styles/FontSizes.axaml" />
+  <StyleInclude Source="avares://Dotnetools.Fluent/Styles/IconButton.axaml" />
+  <StyleInclude Source="avares://Dotnetools.Fluent/Styles/Label.axaml" />
+  <StyleInclude Source="avares://Dotnetools.Fluent/Styles/OptionButton.axaml" />
+  <StyleInclude Source="avares://Dotnetools.Fluent/Styles/PathIcon.axaml" />
+  <StyleInclude Source="avares://Dotnetools.Fluent/Styles/Separator.axaml" />
+  <StyleInclude Source="avares://Dotnetools.Fluent/Styles/SplitView.axaml" />
+  <StyleInclude Source="avares://Dotnetools.Fluent/Styles/TextBox.axaml" />
+  <StyleInclude Source="avares://Dotnetools.Fluent/Styles/NotificationCard.axaml" />
+  <StyleInclude Source="avares://Dotnetools.Fluent/Styles/HyperlinkButton.axaml" />
+  <StyleInclude Source="avares://Dotnetools.Fluent/Controls/AnimatedButton.axaml" />
+  <StyleInclude Source="avares://Dotnetools.Fluent/Controls/CurrencyEntryBox.axaml" />
+  <StyleInclude Source="avares://Dotnetools.Fluent/Controls/DualCurrencyEntryBox.axaml" />
+  <StyleInclude Source="avares://Dotnetools.Fluent/Controls/HistoryPlaceholderPanel.axaml" />
+  <StyleInclude Source="avares://Dotnetools.Fluent/Styles/TreeDataGrid.axaml" />
+  <StyleInclude Source="avares://Dotnetools.Fluent/Styles/RadioButton.axaml" />
+  <StyleInclude Source="avares://Dotnetools.Fluent/Styles/SettingsLayout.axaml" />
+  <StyleInclude Source="avares://Dotnetools.Fluent/Styles/Slider.axaml" />
+  <StyleInclude Source="avares://Dotnetools.Fluent/Styles/ToolTip.axaml" />
+  <StyleInclude Source="avares://Dotnetools.Fluent/Styles/FlyoutPresenter.axaml" />
+  <StyleInclude Source="avares://Dotnetools.Fluent/Styles/ToggleSwitch.axaml" />
+  <StyleInclude Source="avares://Dotnetools.Fluent/Styles/ScrollViewer.axaml" />
+  <StyleInclude Source="avares://Dotnetools.Fluent/Styles/CuedScrollViewer.axaml" />
+</Styles>

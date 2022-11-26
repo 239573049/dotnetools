@@ -1,0 +1,23 @@
+using NBitcoin;
+using System.Linq;
+using System.Collections.Generic;
+using Dotnetools.Blockchain.Keys;
+
+namespace Dotnetools.WabiSabi.Client;
+
+public class InternalDestinationProvider : IDestinationProvider
+{
+	public InternalDestinationProvider(KeyManager keyManager)
+	{
+		KeyManager = keyManager;
+	}
+
+	private KeyManager KeyManager { get; }
+
+	public IEnumerable<IDestination> GetNextDestinations(int count)
+	{
+		// Get all locked internal keys we have and assert we have enough.
+		KeyManager.AssertLockedInternalKeysIndexedAndPersist(count);
+		return KeyManager.GetKeys(x => x.IsInternal && x.KeyState == KeyState.Locked).Select(x => x.PubKey.WitHash);
+	}
+}
