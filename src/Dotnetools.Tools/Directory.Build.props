@@ -1,5 +1,6 @@
 <Project>
- <PropertyGroup>
-   <Deterministic>true</Deterministic>
- </PropertyGroup>
+  <PropertyGroup>
+    <Nullable>enable</Nullable>
+    <AvaloniaVersion>11.0.0-preview4</AvaloniaVersion>
+  </PropertyGroup>
 </Project>
