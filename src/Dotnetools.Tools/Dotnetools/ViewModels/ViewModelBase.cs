@@ -1,8 +1,33 @@
-﻿using ReactiveUI;
+﻿using Prism.Mvvm;
+using Prism.Regions;
 
-namespace Dotnetools.ViewModels
+namespace Dotnetools.ViewModels;
+
+public class ViewModelBase : BindableBase, INavigationAware
 {
-    public class ViewModelBase : ReactiveObject
+    private string _title;
+
+    public string Title
     {
+        get => _title;
+        set => SetProperty(ref _title, value);
+    }
+
+    public virtual bool IsNavigationTarget(NavigationContext navigationContext)
+    {
+        return OnNavigatingTo(navigationContext);
+    }
+
+    public virtual void OnNavigatedFrom(NavigationContext navigationContext)
+    {
+    }
+
+    public virtual void OnNavigatedTo(NavigationContext navigationContext)
+    {
+    }
+
+    public virtual bool OnNavigatingTo(NavigationContext navigationContext)
+    {
+        return true;
     }
 }

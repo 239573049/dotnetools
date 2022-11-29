@@ -3,15 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33103.201
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dotnetools", "Dotnetools\Dotnetools.csproj", "{A7435019-5D68-4EA7-946A-687834D537F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dotnetools", "Dotnetools\Dotnetools.csproj", "{A7435019-5D68-4EA7-946A-687834D537F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dotnetools.Android", "Dotnetools.Android\Dotnetools.Android.csproj", "{DADFC2E3-7AAF-4C6B-AA55-258B8CDAB614}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dotnetools.Android", "Dotnetools.Android\Dotnetools.Android.csproj", "{DADFC2E3-7AAF-4C6B-AA55-258B8CDAB614}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dotnetools.Desktop", "Dotnetools.Desktop\Dotnetools.Desktop.csproj", "{3A00ABDE-7CFF-4EA6-8EBE-7DB59A31C16D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dotnetools.Desktop", "Dotnetools.Desktop\Dotnetools.Desktop.csproj", "{3A00ABDE-7CFF-4EA6-8EBE-7DB59A31C16D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dotnetools.iOS", "Dotnetools.iOS\Dotnetools.iOS.csproj", "{023A8450-384F-4CCF-A6F3-5D16F0D8D472}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dotnetools.iOS", "Dotnetools.iOS\Dotnetools.iOS.csproj", "{023A8450-384F-4CCF-A6F3-5D16F0D8D472}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dotnetools.Web", "Dotnetools.Web\Dotnetools.Web.csproj", "{5398A411-8AEB-432D-9E5C-8E93A7E3F507}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dotnetools.Web", "Dotnetools.Web\Dotnetools.Web.csproj", "{5398A411-8AEB-432D-9E5C-8E93A7E3F507}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决方案项", "{F54067A8-11EA-4A46-9CD3-09AB6C5D5315}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
