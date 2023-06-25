@@ -3,9 +3,15 @@
 
 <PageTitle>@_title</PageTitle>
 
-<MApp>
-    <h2 style="margin-bottom: 30px; margin-top: 10px; text-align: center;">@_title</h2>
+<MRow>
+    <MCol Class="mt-2"
+          Cols="12">
+        <strong style="padding-left: 10px;">@_title</strong>
+    </MCol>
 
+</MRow>
+
+<div class="tool-body">
 
     <h3>常用正则表达式测试</h3>
 
@@ -46,10 +52,10 @@
             </ul>
         }
     </div>
-</MApp>
+</div>
 
 @code {
-    private readonly string? _title = $"工具箱-{ToolKind.RegexTester.ToolItem()?.Name}";
+    private readonly string? _title = $"工具箱-{ToolKind.RegexTester.ToolItem()?.Name}-Dotnet工具箱";
     private string? _regexPattern;
     private string? _testString;
 

@@ -5,6 +5,13 @@ VisualStudioVersion = 17.7.33808.371
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dotnetools.Web", "Dotnetools.Web\Dotnetools.Web.csproj", "{73E843F7-DB06-446B-8E10-4F378974799D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决方案项", "{660C96F3-1234-4988-8342-C87ACB083641}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		Directory.Build.Props = Directory.Build.Props
+		Directory.Build.Targets = Directory.Build.Targets
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

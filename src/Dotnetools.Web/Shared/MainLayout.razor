@@ -28,28 +28,34 @@
             <MRow>
                 <MCol Cols="12"
                       Sm="2">
-                    <MSheet Rounded="@("lg")"
-                            MinHeight="268">
-                        <!-- Your content -->
-                    </MSheet>
+                    <SiteInfoSideBar/>
                 </MCol>
 
                 <MCol Cols="12"
                       Sm="8">
-                    <MSheet MinHeight="@("70vh")"
-                            Rounded="@("lg")">
-                        @Body
-                    </MSheet>
+                    <MContainer>
+                        <MCard>
+                            @Body
+                        </MCard>
+                    </MContainer>
                 </MCol>
 
                 <MCol Cols="12"
                       Sm="2">
-                    <MSheet Rounded="@("lg")"
-                            MinHeight="268">
-                        <!-- Your content -->
-                    </MSheet>
+                    <MRow>
+                        <MCol>
+                            <RecommendedToolsSideBar/>
+                        </MCol>
+                    </MRow>
+                    <MRow>
+                        <MCol>
+                            <RecommendedGamesSideBar/>
+                        </MCol>
+                    </MRow>
                 </MCol>
             </MRow>
         </MContainer>
     </MMain>
+
+    <FooterPartial/>
 </MApp>

@@ -1,0 +1,21 @@
+﻿<Project>
+
+	<!-- AssemblyInfo -->
+	<PropertyGroup>
+		<Company>Dotnetools</Company>
+		<Product>Dotnetools</Product>
+		<Copyright>Copyright © 2022-$([System.DateTime]::Today.ToString(yyyy)) dotnetools.com. All rights reserved.</Copyright>
+		<Description>Dotnetools, A tool site sharing .NET technologies.</Description>
+
+		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+		<Version>0.1.0.1</Version>
+		<AssemblyVersion>$(Version)</AssemblyVersion>
+		<FileVersion>$(Version)</FileVersion>
+		<InformationalVersion>$(Version)</InformationalVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Page Update="@(Page)" SubType="Designer" Generator="MSBuild:Compile" />
+	</ItemGroup>
+
+</Project>

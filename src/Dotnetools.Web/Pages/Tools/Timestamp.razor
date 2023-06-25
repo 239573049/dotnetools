@@ -2,9 +2,15 @@
 
 <PageTitle>@_title</PageTitle>
 
-<MApp>
-    <h2 style="margin-bottom: 30px; margin-top: 10px; text-align: center;">@_title</h2>
+<MRow>
+    <MCol Class="mt-2"
+          Cols="12">
+        <strong style="padding-left: 10px;">@_title</strong>
+    </MCol>
 
+</MRow>
+
+<div class="tool-body">
     <p>
         现在
     </p>
@@ -64,11 +70,11 @@
                  Class="ml-3">
         </MSelect>
     </p>
-</MApp>
+</div>
 
 @code
 {
-    private readonly string? _title = $"工具箱-{ToolKind.Timestamp.ToolItem()?.Name}";
+    private readonly string? _title = $"工具箱-{ToolKind.Timestamp.ToolItem()?.Name}-Dotnet工具箱";
     DateTime _currentDatetime;
     long _timestamp1;
     long _timestamp2;

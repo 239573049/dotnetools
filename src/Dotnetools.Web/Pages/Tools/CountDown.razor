@@ -2,9 +2,15 @@
 
 <PageTitle>@_title</PageTitle>
 
-<MApp>
-    <h2 style="margin-bottom: 30px; margin-top: 10px; text-align: center;">@_title</h2>
+<MRow>
+    <MCol Class="mt-2"
+          Cols="12">
+        <strong style="padding-left: 10px;">@_title</strong>
+    </MCol>
 
+</MRow>
+
+<div class="tool-body">
     <p>
         <MTextField Label="持续时间（秒）" Type="number" TValue="int" @bind-Value="@_duration"/>
     </p>
@@ -18,10 +24,10 @@
     <div class="text-center">
         <MProgressCircular Value="@_remainingTimePercent" Size="100" Width="15" Rotate="360" Color="teal">@_remainingTime</MProgressCircular>
     </div>
-</MApp>
+</div>
 
 @code {
-    private readonly string? _title = $"工具箱-{ToolKind.CountDown.ToolItem()?.Name}";
+    private readonly string? _title = $"工具箱-{ToolKind.CountDown.ToolItem()?.Name}-Dotnet工具箱";
     private int _duration = 20;
     private int _remainingTime;
     private int _remainingTimePercent;

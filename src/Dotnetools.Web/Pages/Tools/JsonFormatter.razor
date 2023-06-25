@@ -3,9 +3,15 @@
 
 <PageTitle>@_title</PageTitle>
 
-<MApp>
-    <h2 style="margin-bottom: 30px; margin-top: 10px; text-align: center;">@_title</h2>
+<MRow>
+    <MCol Class="mt-2"
+          Cols="12">
+        <strong style="padding-left: 10px;">@_title</strong>
+    </MCol>
 
+</MRow>
+
+<div class="tool-body">
     <div>
         <MTextarea BackgroundColor="grey lighten-2" Solo
                    Color="orange orange-darken-4" TValue="string" @bind-Value="_inputJson"
@@ -22,11 +28,11 @@
                    Color="orange orange-darken-4" TValue="string" @bind-Value="_formattedJson"
                    Label="格式化或压缩后Json" Rows="8" style="font-size:12px;" RowHeight="15" AutoGrow/>
     </div>
-</MApp>
+</div>
 
 @code
 {
-    private readonly string? _title = $"工具箱-{ToolKind.JsonFormatter.ToolItem()?.Name}";
+    private readonly string? _title = $"工具箱-{ToolKind.JsonFormatter.ToolItem()?.Name}-Dotnet工具箱";
     private string? _inputJson;
     private string? _formattedJson;
 

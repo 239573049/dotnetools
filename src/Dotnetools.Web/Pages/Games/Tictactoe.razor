@@ -2,9 +2,15 @@
 
 <PageTitle>@_title</PageTitle>
 
-<MApp>
-    <h2 style="margin-bottom: 30px; margin-top: 10px; text-align: center;">@_title</h2>
+<MRow>
+    <MCol Class="mt-2"
+          Cols="12">
+        <strong style="padding-left: 10px;">@_title</strong>
+    </MCol>
 
+</MRow>
+
+<div class="tool-body">
     @if (_isGameOver)
     {
         <p>@_message</p>
@@ -27,10 +33,10 @@
         </div>
         <p>@_message</p>
     }
-</MApp>
+</div>
 
 @code {
-    private readonly string? _title = $"在线游戏-{GameKind.Tictactoe.GameItem()?.Name}";
+    private readonly string? _title = $"在线游戏-{GameKind.Tictactoe.GameItem()?.Name}-Dotnet工具箱";
     private string?[] _board = new string[9];
     private string _currentPlayer = "X";
     private string? _message;
